@@ -1,9 +1,11 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import SongsList from '../components/Songs/SongsList.vue'
+import ThePlayer from '../components/Player/ThePlayer.vue'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <SongsList />
+    <ThePlayer />
   </main>
 </template>
