@@ -7,7 +7,4 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style scoped>
- wrapper h1 {
-  font-size: 39px;
- }
 </style>
