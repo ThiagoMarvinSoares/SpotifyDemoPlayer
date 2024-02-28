@@ -30,7 +30,6 @@
     width: 350px;
     border-radius: 5px;
     background-color: white;
-    border: 0,5px solid black;
     padding: 15px;
     margin-top: 30px;
 

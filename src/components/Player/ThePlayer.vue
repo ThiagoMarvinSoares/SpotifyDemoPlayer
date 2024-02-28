@@ -1,30 +1,43 @@
 <template>
-    <div>
-      <!-- Your HTML template code goes here -->
-      <h1>Song Title</h1>
-      <p>{{ message }}</p>
+  <div class="player-card">
+    <div class="player-card_left">
+      <div>
+        <p>image</p>
+      </div>
+      <div class="player-card_info">  
+        <p><!--{{ song.title }}-->song</p>
+        <p>artist</p>
+      </div>
     </div>
+    <div class="player-element">
+      <p>player</p>
+    </div>
+    <div class="player-volume">
+      <p>volume</p>
+    </div>
+  </div>      
   </template>
   
   <script>
-  export default {
-    name: 'HelloWorld',
-    data() {
-      return {
-        message: 'The player goes here!'
-      };
-    },
-    // Add other Vue component options here, such as methods, computed properties, etc.
-  }
   </script>
   
-  <style scoped>
-  /* Your component-specific CSS styles go here */
-  h1 {
-    color: blue;
+<style scoped>
+  .player-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    position: fixed;
+     /* colors and styles */
+    color: white;
+    background-color: black;
+    width: 100%;
   }
-  p {
-    font-size: 18px;
-  }
-  </style>
+  .player-card_left {
+      display: flex;  
+      flex-direction: row;
+    }
+
+</style>
   
