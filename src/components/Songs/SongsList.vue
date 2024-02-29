@@ -1,5 +1,6 @@
 <template>
-  <div class="song-card">
+  <div class="wrap">
+    <div class="song-card">
       <div class="song-card_element">
         <div class="song-card_left">
         <button>Play</button>
@@ -13,7 +14,39 @@
       <div class="song-card_right">
         <p><!--{{ song.duration }}-->00:00</p>
       </div>
+    </div>
+    <div class="song-card">
+      <div class="song-card_element">
+        <div class="song-card_left">
+        <button>Play</button>
+        <p>image</p>
+      </div>
+        <div class="song-card_info">  
+          <p><!--{{ song.title }}-->song</p>
+          <p>artist</p>
+        </div>
+      </div>
+      <div class="song-card_right">
+        <p><!--{{ song.duration }}-->00:00</p>
+      </div>
+    </div>
+    <div class="song-card">
+      <div class="song-card_element">
+        <div class="song-card_left">
+        <button>Play</button>
+        <p>image</p>
+      </div>
+        <div class="song-card_info">  
+          <p><!--{{ song.title }}-->song</p>
+          <p>artist</p>
+        </div>
+      </div>
+      <div class="song-card_right">
+        <p><!--{{ song.duration }}-->00:00</p>
+      </div>
+    </div>
   </div>
+  
 </template>
   
   <script>
@@ -21,6 +54,18 @@
   </script>
   
   <style lang="scss" scoped>
+  .wrap {
+    background-color: #302B27;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 15px;
+  }
   .song-card {
     display: flex;
     flex-direction: row;
@@ -31,7 +76,7 @@
     border-radius: 5px;
     background-color: white;
     padding: 15px;
-    margin-top: 30px;
+    margin: 15px;
 
     &_element {
       display: flex;
