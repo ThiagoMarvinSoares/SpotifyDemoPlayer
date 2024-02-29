@@ -15,43 +15,40 @@
         <p><!--{{ song.duration }}-->00:00</p>
       </div>
     </div>
-    <div class="song-card">
-      <div class="song-card_element">
-        <div class="song-card_left">
-        <button>Play</button>
-        <p>image</p>
-      </div>
-        <div class="song-card_info">  
-          <p><!--{{ song.title }}-->song</p>
-          <p>artist</p>
-        </div>
-      </div>
-      <div class="song-card_right">
-        <p><!--{{ song.duration }}-->00:00</p>
-      </div>
-    </div>
-    <div class="song-card">
-      <div class="song-card_element">
-        <div class="song-card_left">
-        <button>Play</button>
-        <p>image</p>
-      </div>
-        <div class="song-card_info">  
-          <p><!--{{ song.title }}-->song</p>
-          <p>artist</p>
-        </div>
-      </div>
-      <div class="song-card_right">
-        <p><!--{{ song.duration }}-->00:00</p>
-      </div>
-    </div>
   </div>
-  
 </template>
   
-  <script>
-  
-  </script>
+<script>
+//Conection with API
+console.log('Marvin');
+import axios from 'axios';
+
+export default {
+  name: 'SpotifyAPI',
+  async fetchPlaylists() {
+    try {
+      // POST request
+      const tokenResponse = await axios.post(
+        'https://accounts.spotify.com/api/token',
+        'grant_type=client_credentials&client_id=a6796a45306e48fcaa87626717314bfe&client_secret=2a63f4580d1649a98ad57ef7bfd78426',
+        {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          }
+        }
+      );
+      
+      // Extract the access token from the response
+      const token = tokenResponse.data.access_token;
+
+      console.log(token);
+      
+    } catch (error) {
+      console.error('Error fetching playlists:', error);
+    }
+  }
+};
+</script>
   
   <style lang="scss" scoped>
   .wrap {
