@@ -25,8 +25,10 @@ import axios from "axios";
 
 export default {
   name: "SpotifyAPI",
+
+  //When mounted will call the function
   mounted() {
-    this.fetchPlaylists(); // Call the function here
+    this.fetchPlaylists();
   },
   methods: {
     async fetchPlaylists() {
@@ -47,23 +49,27 @@ export default {
         console.log(token);
 
         const headers = {
-          Authorization: "Bearer " + { token },
+          Authorization: `Bearer ${token}`
         };
 
         const artistsUrl =
           "https://api.spotify.com/v1/artists/4Z8W4fKeB5YxbusRsdQVPb";
 
+        //GET request
         const response = await axios.get(artistsUrl, { headers });
 
+        //If response ok LOG the artist
         if (response.status === 200) {
           const artistData = response.data;
           console.log("Artist information:", artistData);
+          //Error handling if GET fails
         } else {
           console.error(
             "Error fetching artist information:",
             response.statusText
           );
         }
+        //Error handling if function fails
       } catch (error) {
         console.error("Error fetching playlists:", error);
       }
